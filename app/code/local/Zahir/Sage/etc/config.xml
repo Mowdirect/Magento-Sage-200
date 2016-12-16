@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Zahir_Sage>
+            <version>0.1.0</version>
+        </Zahir_Sage>
+    </modules>
+    <global>
+        <helpers>
+            <sage>
+                <class>Zahir_Sage_Helper</class>
+            </sage>
+        </helpers>
+        <blocks>
+            <sage>
+                <class>Zahir_Sage_Block</class>
+            </sage>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_grid>Zahir_Sage_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <models>
+            <sage>
+                <class>Zahir_Sage_Model</class>
+                <resourceModel>sage_mysql4</resourceModel>
+            </sage>
+            <sage_mysql4>
+                <class>Zahir_Sage_Model_Mysql4</class>
+                <entities>
+                    <schedule>
+                        <table>sage_schedule</table>
+                    </schedule>
+                </entities>
+            </sage_mysql4>
+        </models>
+        <resources>
+            <sage_setup>
+                <setup>
+                    <module>Zahir_Sage</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </sage_setup>
+            <sage_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </sage_write>
+            <sage_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </sage_read>
+        </resources>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <sage before="Mage_Adminhtml">Zahir_Sage_Adminhtml</sage>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <sage module="sage">
+                <title>Sage</title>
+                <sort_order>100</sort_order>
+                <children>
+                    <schedule module="sage">
+                        <title>Manage Schedule</title>
+                        <sort_order>0</sort_order>
+                        <action>adminhtml/schedule</action>
+                    </schedule>
+                </children>
+            </sage>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <sage translate="title" module="sage">
+                            <title>Sage</title>
+                            <sort_order>1000</sort_order>
+                            <children>
+                                <schedule translate="title">
+                                    <title>Schedule</title>
+                                    <sort_order>0</sort_order>
+                                </schedule>
+                            </children>
+                        </sage>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <sage>
+                    <file>sage.xml</file>
+                </sage>
+            </updates>
+        </layout>
+
+        <events>
+            <adminhtml_block_html_before>
+                <observers>
+                    <sales_grid_bservere_sage>
+                        <type>singleton</type>
+                        <class>sage/observer</class>
+                        <method>addColumn</method>
+                    </sales_grid_bservere_sage>
+                </observers>
+            </adminhtml_block_html_before>
+        </events>
+    </adminhtml>
+
+    <crontab>
+        <jobs>
+            <sage_runexport>
+                <schedule><cron_expr>*/5 * * * *</cron_expr></schedule>
+                <run><model>sage/cron::runExport</model></run>
+            </sage_runexport>
+            <sage_runimport>
+                <schedule><cron_expr>*/5 * * * *</cron_expr></schedule>
+                <run><model>sage/cron::runImport</model></run>
+            </sage_runimport>
+        </jobs>
+    </crontab>
+</config> 

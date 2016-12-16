@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Zahir_Sage>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>0.1.0</version>
+    </Zahir_Sage>
+  </modules>
+</config>

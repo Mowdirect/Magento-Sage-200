@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <zahir translate="label" module="sage">
+            <label>Zahir Media</label>
+            <sort_order>0</sort_order>
+        </zahir>
+    </tabs>
+    <sections>
+        <zahir_sage translate="label" module="sage">
+            <label>General</label>
+            <tab>zahir</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>0</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <debug translate="label">
+                    <label>Sage Debug Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <status translate="label">
+                            <label>Enable Debug</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>You can enable/Disable logging</comment>
+                        </status>
+                        <email translate="label">
+                            <label>Error email</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email>
+                    </fields>
+                </debug>
+                <general translate="label">
+                    <label>Sage General Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <status translate="label">
+                            <label>Status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>You can enable/Disable the module</comment>
+                        </status>
+                        <path translate="label">
+                            <label>Export location</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Write in the desired server path</comment>
+                        </path>
+                        <order_status translate="label">
+                            <label>Order Statuses</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </order_status>
+                    </fields>
+                </general>
+                <stock translate="label">
+                    <label>Sage Stock Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <status translate="label">
+                            <label>Status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>You can enable/Disable the stock updates </comment>
+                        </status>
+                        <path translate="label">
+                            <label>Import location</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Write in the desired server path</comment>
+                        </path>
+                    </fields>
+                </stock>
+            </groups>
+        </zahir_sage>
+    </sections>
+</config>

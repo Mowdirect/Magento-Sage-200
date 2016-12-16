@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <sage_adminhtml_schedule_index>
+	<reference name="content">
+	  <block type="sage/adminhtml_schedule" name="schedule" />
+	</reference>
+  </sage_adminhtml_schedule_index>
+</layout>
